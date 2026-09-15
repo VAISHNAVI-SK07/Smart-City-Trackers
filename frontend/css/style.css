@@ -1,0 +1,154 @@
+/* ============================================================
+   SMART CIVIC TRACKER — SHARED STYLES
+   Loaded on every page, alongside Bootstrap (via CDN in each HTML file).
+   ============================================================ */
+
+:root {
+  --brand-primary: #2563eb;      /* civic blue */
+  --brand-primary-dark: #1e40af;
+  --brand-accent: #f59e0b;       /* amber, used for warnings/priority */
+  --brand-success: #16a34a;
+  --brand-danger: #dc2626;
+  --bg-light: #f8fafc;
+  --text-dark: #1e293b;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* --- Navbar branding --- */
+.navbar-brand-civic {
+  font-weight: 700;
+  color: var(--brand-primary) !important;
+}
+.navbar-brand-civic .subtitle {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #64748b;
+  display: block;
+  line-height: 1;
+}
+
+/* --- Status badges --- */
+.badge-status {
+  font-size: 0.8rem;
+  padding: 0.35em 0.7em;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.badge-status.Submitted        { background: #e2e8f0; color: #334155; }
+.badge-status.Under-Review     { background: #dbeafe; color: #1e40af; }
+.badge-status.Verified         { background: #cffafe; color: #0e7490; }
+.badge-status.Rejected         { background: #fee2e2; color: #991b1b; }
+.badge-status.In-Progress      { background: #fef3c7; color: #92400e; }
+.badge-status.Resolved         { background: #dcfce7; color: #166534; }
+.badge-status.Closed           { background: #e5e7eb; color: #374151; }
+.badge-status.Reopened         { background: #fde68a; color: #92400e; }
+
+/* --- Priority badges --- */
+.badge-priority {
+  font-size: 0.75rem;
+  padding: 0.3em 0.6em;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.badge-priority.Low      { background: #e2e8f0; color: #334155; }
+.badge-priority.Medium   { background: #fef3c7; color: #92400e; }
+.badge-priority.High     { background: #ffedd5; color: #9a3412; }
+.badge-priority.Critical { background: #fee2e2; color: #991b1b; }
+
+/* --- Cards --- */
+.civic-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: box-shadow 0.15s ease;
+}
+.civic-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.stat-card {
+  border-radius: 12px;
+  padding: 1.25rem;
+  color: white;
+}
+.stat-card .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.stat-card .stat-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+.stat-card.bg-total    { background: linear-gradient(135deg, #2563eb, #1e40af); }
+.stat-card.bg-pending  { background: linear-gradient(135deg, #f59e0b, #b45309); }
+.stat-card.bg-resolved { background: linear-gradient(135deg, #16a34a, #15803d); }
+.stat-card.bg-critical { background: linear-gradient(135deg, #dc2626, #991b1b); }
+
+/* --- Auth pages (login/register) --- */
+.auth-wrapper {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+.auth-card {
+  max-width: 420px;
+  width: 100%;
+}
+
+/* --- Empty states --- */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #94a3b8;
+}
+.empty-state i {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* --- Timeline (status history) --- */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid #e2e8f0;
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.94rem;
+  top: 0.2rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--brand-primary);
+}
+
+/* --- Buttons --- */
+.btn-civic-primary {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: white;
+}
+.btn-civic-primary:hover {
+  background-color: var(--brand-primary-dark);
+  border-color: var(--brand-primary-dark);
+  color: white;
+}
+
+/* --- Utility --- */
+.cursor-pointer { cursor: pointer; }
+.text-brand { color: var(--brand-primary); }
